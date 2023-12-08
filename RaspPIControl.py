@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIOimport RPi.GPIO as GPIO # Import the GPIO module for Raspberry Pi
+import RPi.GPIO as GPIO # Import the GPIO module for Raspberry Pi
 import dht22 # Import the DHT22 module for reading temperature and humidity
 import tsl2561 # Import the TSL2561 module for reading light levels
 import ph_sensor # Import the pH sensor module for reading pH levels

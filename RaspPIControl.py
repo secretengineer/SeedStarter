@@ -1,5 +1,3 @@
-In this script, a Raspberry Pi is used to monitor several environmental sensors. The Raspberry Pi reads the sensor data, evaluates it based on predefined conditions, and controls a relay based on the sensor data. The script continuously monitors the sensors and takes action by turning the relay on or off.
-
 import RPi.GPIO as GPIOimport RPi.GPIO as GPIO # Import the GPIO module for Raspberry Pi
 import dht22 # Import the DHT22 module for reading temperature and humidity
 import tsl2561 # Import the TSL2561 module for reading light levels

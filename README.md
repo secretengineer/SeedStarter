@@ -4,7 +4,7 @@ Environmental controller for seed-starting rack using Raspberry Pi
 
 This code is designed to automate the operation of a seedling heat mat and greenhouse lighting system. It reads data from a light sensor, a temperature sensor, and the weather API. The script then turns on the heat mat and lighting based on the collected data.
 
-Here is a step-by-step breakdown of the code:
+**Here is a step-by-step breakdown of the code:**
 
 Import necessary libraries.
 Define pin numbers for the light sensor, seedling heat mat, and greenhouse light.

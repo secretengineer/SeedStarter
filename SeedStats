@@ -1,0 +1,49 @@
+import sqlite3
+
+# Function to create a database and table if it doesn't exist
+def create_database():
+    conn = sqlite3.connect('seeds.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS seeds (
+            id INTEGER PRIMARY KEY,
+            seed_type TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+# Function to add a seed type to the database
+def add_seed(seed_type):
+    conn = sqlite3.connect('seeds.db')
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO seeds (seed_type) VALUES (?)', (seed_type,))
+    conn.commit()
+    conn.close()
+
+# Function to retrieve all seed types from the database
+def get_seeds():
+    conn = sqlite3.connect('seeds.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT seed_type FROM seeds')
+    seeds = cursor.fetchall()
+    conn.close()
+    return [seed[0] for seed in seeds]
+
+# Main function to run the seed input process
+def main():
+    create_database()
+    
+    while True:
+        seed_type = input("Enter the type of seed you are growing (or type 'exit' to finish): ")
+        if seed_type.lower() == 'exit':
+            break
+        add_seed(seed_type)
+
+    print("\nYou have entered the following seeds:")
+    seeds = get_seeds()
+    for seed in seeds:
+        print(f"- {seed}")
+
+if __name__ == "__main__":
+    main()
